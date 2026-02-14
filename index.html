@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Shriya 💜</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary: #9b59b6; /* Purple */
+            --dark-purple: #4a235a;
+            --light-bg: #f3e5f5;
+            --accent: #ff6b81;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-purple);
+            overflow-x: hidden; /* Hide scrollbars from floating elements */
+            position: relative;
+        }
+
+        h1, h2, h3 { font-family: 'Indie Flower', cursive; }
+
+        /* Floating Background Container */
+        #background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Let clicks pass through */
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-emoji {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.6;
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh; /* Almost full screen */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            color: var(--dark-purple);
+            text-shadow: 2px 2px 0px white;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            background: rgba(255,255,255,0.7);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        /* Button Styling */
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Indie Flower', cursive;
+            transition: transform 0.2s, background 0.2s;
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background: var(--dark-purple);
+        }
+
+        .btn:active { transform: scale(0.95); }
+
+        /* Content Sections */
+        .card-section {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .photo-frame {
+            width: 200px;
+            height: 250px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: rotate(-3deg);
+            transition: transform 0.3s;
+        }
+        
+        .photo-frame:nth-child(even) { transform: rotate(3deg); }
+        .photo-frame:hover { transform: scale(1.05) rotate(0deg); z-index: 10; }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 85%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Surprise Animation Elements */
+        .confetti {
+            position: fixed;
+            top: -10px;
+            z-index: 9999;
+            width: 15px;
+            height: 15px;
+            background-color: #f00;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(720deg); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="background-container"></div>
+
+    <div class="container">
+        
+        <div class="hero">
+            <h1>Happy Valentine's Day<br>Shriya!</h1>
+            <p>To my favorite Microbiologist, Team mate and Artist ever. 🧬</p>
+            <button class="btn" onclick="triggerSurprise()">Click for a Surprise 🎁</button>
+        </div>
+
+        <div class="card-section">
+            <h2>In this life, I couldn't have asked for more than you......</h2>
+            <p style="font-size: 1.2rem; line-height: 1.6;">
+                You are the Violet to my rainbow, the slide to my microscope, the adenine to my thymine and ofcourse, the Love of my life❤️. 
+                Whether you are helping me write records or crafting something beautiful, you amaze and inspire me every day.
+            </p>
+        </div>
+
+        <div class="card-section">
+            <h2>Our Cute Moments</h2>
+            <div class="gallery">
+                <div class="photo-frame">
+                    <div class="photo-placeholder">
+                        <img src="img-2.jpg">
+                    </div>
+                    <p style="margin: 5px 0 0 0; font-size: 0.9rem;">Pretty under Sunshine🌞</p>
+                </div>
+
+                <div class="photo-frame">
+                    <div class="photo-placeholder">
+                        <img src="img-1.jpg">
+                    </div>
+                    <p style="margin: 5px 0 0 0; font-size: 0.9rem;">Our First "Date"😛</p>
+                </div>
+             
+                <div class="photo-frame">
+                    <div class="photo-placeholder">
+                        <img src="img-3.jpg">
+                    </div>
+                    <p style="margin: 5px 0 0 0; font-size: 0.9rem;">Ethnic couple😘</p>
+                </div>
+
+                <div class="photo-frame">
+                    <div class="photo-placeholder">
+                        <img src="img-4.jpg">
+                    </div>
+                    <p style="margin: 5px 0 0 0; font-size: 0.9rem;">At the theatre🤞</p>
+                </div>
+
+                <div class="photo-frame">
+                    <div class="photo-placeholder">
+                        <img src="img-5.jpg">
+                    </div>
+                    <p style="margin: 5px 0 0 0; font-size: 0.9rem;">The most pretty smile that god has ever created😭, sooo prettyyyyy!!!!</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="final-message" class="card-section" style="display:none; background: #fff0f5; border: 3px dashed var(--accent);">
+            <h1>I Love You! ❤️</h1>
+            <p>Here is to more Ice-cream dates, more anime binges, and more years together.</p>
+            <div style="font-size: 4rem; margin-top: 10px;">🧸🍫🍝</div>
+        </div>
+
+    </div>
+
+    <script>
+        /* --- 1. GENERATE FLOATING BACKGROUND --- */
+        const bgContainer = document.getElementById('background-container');
+        // The list of emojis based on her interests
+        const emojis = ['🐱', '🐈', '💜', '🧬', '🦠', '🍝', '🥖', '🍫', '🧶', '🎨', '🧸', '🌿', '💊'];
+
+        function createFloatingEmoji() {
+            const el = document.createElement('div');
+            el.classList.add('floating-emoji');
+            el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Randomize position and size
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            el.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            
+            bgContainer.appendChild(el);
+
+            // Clean up element after animation finishes to keep browser fast
+            setTimeout(() => { el.remove(); }, 20000);
+        }
+
+        // Create a new emoji every 800ms
+        setInterval(createFloatingEmoji, 800);
+
+
+        /* --- 2. SURPRISE BUTTON FUNCTION --- */
+        function triggerSurprise() {
+            // A. Show the hidden message
+            const messageDiv = document.getElementById('final-message');
+            messageDiv.style.display = 'block';
+            
+            // B. Scroll to the message smoothly
+            messageDiv.scrollIntoView({ behavior: 'smooth' });
+
+            // C. Trigger Confetti Explosion
+            for (let i = 0; i < 100; i++) {
+                createConfetti();
+            }
+        }
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            
+            // Random colors (Purple, Pink, Gold)
+            const colors = ['#9b59b6', '#ff6b81', '#f1c40f', '#e056fd'];
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            // Random position at top
+            confetti.style.left = Math.random() * 100 + 'vw';
+            
+            // Random animation speed
+            confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            // Random shape (some hearts!)
+            if (Math.random() > 0.5) {
+                confetti.style.borderRadius = '50%';
+            } else {
+                confetti.innerHTML = '❤️';
+                confetti.style.backgroundColor = 'transparent';
+                confetti.style.fontSize = '20px';
+            }
+
+            document.body.appendChild(confetti);
+
+            // Cleanup
+            setTimeout(() => { confetti.remove(); }, 5000);
+        }
+
+    </script>
+</body>
+</html>
